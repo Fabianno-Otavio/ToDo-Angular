@@ -1,0 +1,18 @@
+<ul>
+    <li *ngFor="let item of this.listService.getItemList();">
+        <div class="item" *ngIf="!item.isEdit" class="{{ checked == 'close' ? 'checked' : '' }}">{{ item.valor }}</div>
+        <app-dialog *ngIf="item.isEdit" (newTask) = "adicionarNewTask($event, item)"></app-dialog>
+        <div>
+            <mat-icon (click)="checar()" > {{ checked }} </mat-icon>
+            <mat-icon (click)="alterarItem(item)"> edit </mat-icon>
+            <mat-icon (click)="removerItem(item)"> delete </mat-icon>
+        </div>
+    </li>
+</ul> 
+
+<!-- 
+    app-Dialog
+        valor, devolver quando clicar em alterar.
+
+       * item, quando clicar em alterar ele deve chamar service fazer a alteração.
+ -->

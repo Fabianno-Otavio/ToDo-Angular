@@ -1,0 +1,49 @@
+li{
+    list-style-type: none;
+    background-color: bisque;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+    border-radius: 3px;
+    padding:5px;
+}
+
+li:not(:last-child){
+    margin-bottom:5px;
+}
+
+
+div{
+    width:90px;
+}
+
+.item{
+    width:90%;
+    text-align: justify;
+}
+
+.checked{
+    text-decoration: line-through;
+}
+
+ul{
+    background-color: red;
+    padding:5px;
+}
+
+ul:empty {
+    padding:0;
+}
+ 
+mat-icon{
+    color: darkblue;    
+}
+
+mat-icon:hover{
+    cursor: pointer;
+}
+
+.alteraItem{
+    background-color: blueviolet;
+}
