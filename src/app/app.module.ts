@@ -12,6 +12,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogComponent } from './dialog/dialog.component';
 import { HttpGetComponent } from './http-get/http-get.component';
+import { CheckedDirective } from './diretivas/checked.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpGetComponent } from './http-get/http-get.component';
     SearchComponent,
     WrapperComponent,
     DialogComponent,
-    HttpGetComponent
+    HttpGetComponent,
+    CheckedDirective
   ],
   imports: [
     BrowserModule,
