@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ListService } from './../list/list.service';
+import { ListService } from '../list/list.service';
 
 @Injectable({
   providedIn: 'root'

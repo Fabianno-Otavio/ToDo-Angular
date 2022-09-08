@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ListService } from './list.service';
-import { IItemToDoList } from './../model/toDoList.interface';
+import { IItemToDoList } from './../../models/toDoList.interface';
 
 @Component({
   selector: 'app-list',

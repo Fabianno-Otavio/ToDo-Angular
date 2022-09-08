@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
 
-import { IAdvice } from '../model/advice.interface';
+import { lastValueFrom } from 'rxjs';
+import { IAdvice } from '../../models/advice.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HtmlGetService {
+export class HttpGetService {
 
   constructor(private httpClient: HttpClient) {  }
 

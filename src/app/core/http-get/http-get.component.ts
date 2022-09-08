@@ -1,6 +1,7 @@
-import { IAdvice } from '../model/advice.interface';
-import { HtmlGetService } from './http-get.service';
 import { Component, OnInit } from '@angular/core';
+
+import { IAdvice } from '../../models/advice.interface';
+import { HttpGetService } from '../../shared/services/http-get.service';
 
 @Component({
   selector: 'app-html-get',
@@ -11,17 +12,19 @@ export class HttpGetComponent implements OnInit {
 
   advice!: IAdvice;
 
-  constructor(private htmlGetService: HtmlGetService) { }
+  constructor(private httpGetService: HttpGetService) { }
 
   async ngOnInit(): Promise<void> {
     await this.getAdvice();
   }
 
   async getAdvice(): Promise<void>{
+
     try {
-      this.advice = await this.htmlGetService.getAdvice();
+      this.advice = await this.httpGetService.getAdvice();
     } catch ( erro: any ){
       console.log(`Erro: ${erro}`);
     }
   }
+
 }

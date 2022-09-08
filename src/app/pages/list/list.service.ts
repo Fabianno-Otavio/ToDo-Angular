@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { IItemToDoList } from '../model/toDoList.interface';
+import { IItemToDoList } from '../../models/toDoList.interface';
+import { GeradorStringAleatoria } from '../../shared/util/geradorStringAleatoria';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { IItemToDoList } from '../model/toDoList.interface';
 export class ListService {
 
   items: IItemToDoList[] = [];
+  geradorStringAleatoria: GeradorStringAleatoria = new GeradorStringAleatoria();
   constructor() { }
 
   getItemList(): IItemToDoList[]{
@@ -14,7 +16,7 @@ export class ListService {
   }
 
   adicionarItem(item: string): void{
-    this.items.push({id: this.geradorStringAleartoria(), valor: item, isEdit: false});
+    this.items.push({id: this.geradorStringAleatoria.geraString(), valor: item, isEdit: false});
   }
 
   removerItem(id: string): void{
@@ -29,22 +31,11 @@ export class ListService {
     });
   }
 
-  public geradorStringAleartoria(): string {
-    let stringAleatoria = '';
-    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (let i = 0; i < 10; i++) {
-      stringAleatoria += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
-    }
-    return stringAleatoria;
-  }
-
   existeNaLista(valor: string): boolean {
 
     let existe: boolean = false;
 
-    console.log(valor);
     this.items.map(item => {
-      console.log(item.valor);
       if (item.valor === valor){
         existe = true;
       }

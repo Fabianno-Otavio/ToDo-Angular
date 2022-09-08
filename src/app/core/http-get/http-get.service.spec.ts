@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HtmlGetService } from './http-get.service';
+import { HttpGetService } from '../../shared/services/http-get.service';
 
 describe('HtmlGetService', () => {
-  let service: HtmlGetService;
+  let service: HttpGetService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HtmlGetService);
+    service = TestBed.inject(HttpGetService);
   });
 
   it('should be created', () => {
